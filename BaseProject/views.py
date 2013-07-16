@@ -6,19 +6,18 @@ Created on 16.06.2012
 '''
 import glob
 from django.shortcuts import render_to_response
-from django.http import HttpResponse
+#from django.http import HttpResponse
 from django.template.context import RequestContext
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import settings
 
 
 def home(request):
-    #staticfile = settings.STATIC_ROOT + "info.html"
-    #info = open(staticfile)
-    #text = info.read()
-    #info.close()
-    text = """<html><body><h1>Hello world</h1><p>asdfgvbasdbg</p></body></html>"""
-    return HttpResponse(text)
+    staticfile = settings.STATIC_ROOT + "info.html"
+    info = open(staticfile)
+    text = info.read()
+    info.close()
+    return render_to_response('test.html', {'content': text}, RequestContext(request))
 
 
 def agreement(request):
