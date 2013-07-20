@@ -1,5 +1,5 @@
 /testForms
-/Pycon/settings.py
+/BaseProject/settings.py
 /UserProfile
 static/*
 !static

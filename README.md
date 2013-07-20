@@ -2,19 +2,30 @@ VoteProject
 ===========
 Для запуска проекта, необходимо создать файлик BaseProject/settings.py и добавить:
 
-`from default_settings import *
+    from default_settings import *
 
-DEBUG = True
-DATABASES = {
-    # Настройка базы данных
+    DEBUG = True
+    DATABASES = {
+        # Настройка базы данных
     }
-`
+
 Такого рода конфигурация требуется, для того чтобы не показывать имя пользователя и пароль в открытом репозитарии
 
 
 # Стили и Bootstrap
 
 Рядом с корневым каталогом требуется скачать и положить Bootstrap - http://twitter.github.io/bootstrap/
+
+# Статические файлы
+
+После изменения шаблонов и перед первым запуском, требуется "собрать" статические файлы:
+
+    python manage.py collectstatic
+
+И конечно же не забываем, после изменения моделей - требуется записать схемы в базу:
+
+    python manage.py syncdb
+    
 
 # Django-Registration
 

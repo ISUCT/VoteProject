@@ -17,7 +17,6 @@ def home(request):
     info = open(staticfile)
     text = info.read()
     info.close()
-    #return HttpResponse(text)
     return render_to_response('test.html', {'content': text}, RequestContext(request))
 
 
