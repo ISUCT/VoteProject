@@ -50,7 +50,7 @@
 			<ul class="dropdown-menu">
 				<li><a href="/accounts/profile/">Профиль</a></li>
 				<li class="divider"></li>
-				<li><a href="{% url auth_logout %}">Выход</a></li>
+				<li><a href="{% url "auth_logout" %}">Выход</a></li>
 			</ul>
 
 		  {% else %}
@@ -59,9 +59,9 @@
               <span class="caret"></span>
             </a>
 	    <ul class="dropdown-menu">
-	      <li><a href="{% url registration_register %}">Регистрация</a></li>
+	      <li><a href="{% url "registration_register" %}">Регистрация</a></li>
 	      <li class="divider"></li>
-	      <li><a href="{% url auth_login %}">Вход</a></li>
+	      <li><a href="{% url "auth_login" %}">Вход</a></li>
 	    </ul>
 	    {% endif %}
           </div>
