@@ -26,8 +26,8 @@ class UserProfileForm(forms.ModelForm):
         fields = ('surname', 'country', 'city', 'company', 'job', 'dokladchik', )
         exclude = ('user', )
 
-
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('last_name', 'first_name')
+        pass
