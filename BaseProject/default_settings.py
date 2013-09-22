@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     #'conference',
     'department',
     'polls',
+    'lessons',
 )
 
 # A sample logging configuration. The only tangible logging

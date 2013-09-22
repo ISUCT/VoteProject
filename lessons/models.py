@@ -14,3 +14,7 @@ class Lesson(models.Model):
     lessonID = models.CharField(_(u'Код занятия'), blank=False, null=True, max_length=100, unique=True)
     status = models.BooleanField(_(u'Статус'), blank=True)
     user = models.ForeignKey(Stuff, blank=False, null=True, verbose_name = "Преподаватель")
+    class Meta(object):
+        verbose_name_plural = "Занятия"
+        verbose_name = "занятие"
+
