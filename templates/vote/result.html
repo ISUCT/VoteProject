@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вопрос  #qwe43rt</title>
+    <script type="text/javascript">
+        // Insert optional override object before the function
+
+//        createGridder = function() {
+//            document.body.appendChild(
+//                            document.createElement('script'))
+//                    .src='js/960.gridder.js';
+//        }
+    </script>
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+    <script src="js/knockout-2.2.1.js"></script>
+    <script src="js/globalize.min.js"></script>
+    <script src="js/dx.chartjs.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href=" css/reset.css" />
+    <link rel="stylesheet" type="text/css" href=" css/960_12_col.css" />
+    <link rel="stylesheet" type="text/css" href=" css/style.css" />
+</head>
+<body onload="createGridder()">
+    <div class="container_12">
+        <nav>
+            <div class="grid_4">
+                <ul class="menu">
+                    <li><a href="create.html">создать вопрос</a></li>
+                    <li><a href="list.html">список вопросов</a></li>
+                </ul>
+            </div>
+            <div class="grid_4 prefix_4">
+                <ul class="menu" id="user_options">
+                    <li id="current_user">email@dimasmirnov.ru</li>
+                    <li><a href="#">выход</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section>
+            <div class="grid_9"><h1>Вопрос  #qwe43rt</h1></div>
+            <div class="grid_3"><button class="btn red">Закрыть</button></div>
+
+            <div class="clear"></div>
+
+            <ul class="quest">
+                <li>Cсылка на вопрос: <a href="quest.html">http://some/#qwe43rt</a></li>
+                <li>Вопрос: некий умный вопрос</li>
+                <li>Группа: 1э10</li>
+                <li>Дисциплина: code jam</li>
+            </ul>
+
+            <div id="chartContainer" style="max-width:800px;height: 400px;"></div>
+            <script type="text/javascript">
+                $(function ()
+                        {
+                            $("#chartContainer").dxCircularGauge({
+                                scale: {
+                                    startValue: 0,
+                                    endValue: 60,
+                                    majorTick: {
+                                        tickInterval: 10
+                                    }
+                                },
+
+                                rangeContainer: {
+                                    backgroundColor: "none",
+                                    ranges: [
+                                        {
+                                            startValue: 0,
+                                            endValue: 20,
+                                            color: "#A6C567"
+                                        },
+                                        {
+                                            startValue: 20,
+                                            endValue: 40,
+                                            color: "#FCBB69"
+                                        },
+                                        {
+                                            startValue: 40,
+                                            endValue: 60,
+                                            color: "#E19094"
+                                        }
+                                    ]
+                                },
+
+                                needles: [{value: 24}],
+
+                                markers: [{value: 27}, { value: 44}]
+                            });
+                        }
+
+                );
+            </script>
+        </section>
+    </div>
+</body>
+</html>

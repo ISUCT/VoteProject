@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Авторизация</title>
+    <script type="text/javascript">
+        // Insert optional override object before the function
+
+//        createGridder = function() {
+//            document.body.appendChild(
+//                            document.createElement('script'))
+//                    .src='js/960.gridder.js';
+//        }
+    </script>
+
+    <link rel="stylesheet" type="text/css" href=" {{ STATIC_URL }}css/reset.css" />
+    <link rel="stylesheet" type="text/css" href=" {{ STATIC_URL }}css/960_12_col.css" />
+    <link rel="stylesheet" type="text/css" href=" {{ STATIC_URL }}css/style.css" />
+</head>
+<body onload="createGridder()">
+    <div class="container_12">
+        <nav>
+            <div class="grid_4">
+                <ul class="menu">
+                    <li class="active"><a href="create.html">создать вопрос</a></li>
+                    <li><a href="list.html">список вопросов</a></li>
+                </ul>
+            </div>
+            <div class="grid_4 prefix_4">
+                <ul class="menu" id="user_options">
+                    <li id="current_user">email@dimasmirnov.ru</li>
+                    <li><a href="#">выход</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section>
+            <div class="grid_12"><h1>Заполните данные</h1></div>
+            <div class="clear"></div>
+
+
+                <form action="#">
+
+                    <div class="form_body">
+                        <div class="grid_7 prefix_2 field">
+                            <label for="login">Группа:</label>
+                            <select class="input_select">
+                                <option>2</option>
+                            </select>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <div class="grid_7 prefix_2 field">
+                             <label for="password">Дисциплина:</label>
+                            <select class="input_select">
+                                <option>2</option>
+                            </select>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <div class="grid_7 prefix_2 field">
+                            <label for="password">Аудитория:</label>
+                            <select class="input_select">
+                                <option>2</option>
+                            </select>
+                        </div>
+
+                        <div class="grid_7 prefix_2">
+                            <textarea class="textarea">Введите ваш текст</textarea>
+                        </div>
+
+                        <div class="clear"></div>
+
+
+
+                            <div class="grid_3 prefix_2">
+                                <span class="quest_create ok">Вопрос создан</span>
+                                 <span class="quest_create error">Ошибка валидации</span>
+                            </div>
+
+                            <div class="grid_3 prefix_2">
+                                <button type="submit" class="btn blue" id="create_btn">Создать</button>
+                            </div>
+
+                            <div class="clear"></div>
+                    </div>
+
+                </form>
+
+                <div class="grid_10 prefix_2">
+                    <span class="id_quest">Индитификатор вопроса: <a href="result.html">qwe43rt</a>
+                </div>
+
+                <div class="clear"></div>
+
+        </section>
+    </div>
+</body>
+</html>

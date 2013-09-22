@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список вопросов</title>
+    <script type="text/javascript">
+        // Insert optional override object before the function
+
+//        createGridder = function() {
+//            document.body.appendChild(
+//                            document.createElement('script'))
+//                    .src='js/960.gridder.js';
+//        }
+    </script>
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href=" css/reset.css" />
+    <link rel="stylesheet" type="text/css" href=" css/960_12_col.css" />
+    <link rel="stylesheet" type="text/css" href=" css/style.css" />
+</head>
+<body onload="createGridder()">
+    <div class="container_12">
+        <nav>
+            <div class="grid_4">
+                <ul class="menu">
+                    <li><a href="create.html">создать вопрос</a></li>
+                    <li class="active"><a href="list.html">список вопросов</a></li>
+                </ul>
+            </div>
+            <div class="grid_4 prefix_4">
+                <ul class="menu" id="user_options">
+                    <li id="current_user">email@dimasmirnov.ru</li>
+                    <li><a href="#">выход</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section>
+            <div class="grid_12"><h1>Список вопросов</h1></div>
+            <div class="clear"></div>
+
+            <table id="QuestTable" class="stripy">
+                <thead>
+                <tr>
+                    <th class="{sorter: false}" style="width: 390px;"><span class="sort">Вопрос</span></th>
+                    <th><span class="sort">Дисциплина</span></th>
+                    <th><span class="sort">Дата</span></th>
+                    <th><span class="sort">Группа</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><span class="open">•</span> Что?</td>
+                    <td>Анализ</td>
+                    <td>10 октября 2013</td>
+                    <td>1э2</td>
+                </tr>
+                <tr>
+                    <td>Где?</td>
+                    <td>Программирование</td>
+                    <td>1 мая 2013</td>
+                    <td>2в4</td>
+                </tr>
+                <tr>
+                    <td>Когда?</td>
+                    <td>Дизайн</td>
+                    <td>23 июля 2011</td>
+                    <td>4д5</td>
+                </tr>
+                <tr>
+                    <td>Вопрос?</td>
+                    <td>Разработка</td>
+                    <td>13 августа 2013</td>
+                    <td>5к3</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <script type="text/javascript">
+                $(document).ready(function()
+                        {
+                            $("#QuestTable").tablesorter();
+                        }
+                );
+            </script>
+
+        </section>
+    </div>
+</body>
+</html>
