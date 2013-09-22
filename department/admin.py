@@ -25,3 +25,4 @@ admin.site.register(Chair, ChairAdmin)
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Discipline, DisciplineAdmin)
 admin.site.register(Group, GroupAdmin)
+

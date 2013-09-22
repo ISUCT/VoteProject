@@ -1,33 +1,48 @@
-# -*- coding=utf8 -*-
-from registration.forms import RegistrationFormUniqueEmail
+# coding: utf8
+from models import Stuff, Student
 from django import forms
-#from django.utils.translation import ugettext_lazy as _
-from models import UserProfile
-from django.contrib.auth.models import User
-#from registration.models import RegistrationProfile
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 
+# Допиливаем форму добавления пользователя. В Meta.model указываем нашу модель.
+# Поля указывать нет необходимости т.к. они переопределяются в UserAdmin.add_fieldsets
+class AdminUserAddForm(UserCreationForm):
 
-class UserRegistrationForm(RegistrationFormUniqueEmail):
-    # Да, здесь повторение кода, надо будет докрутить
-    country = forms.CharField(label=u'Страна')
-    city = forms.CharField(label=u'Город')
-    company = forms.CharField(label=u'Компания/Вуз')
-    job = forms.CharField(required=False, label=u'Должность')
-    dokladchik = forms.BooleanField(required=False, label=u'Я буду докладчиком (доклады можно добавить в профиле)')
-    last_name = forms.CharField(max_length=50, required=False, label=u'Фамилия')
-    first_name = forms.CharField(max_length=50, required=False, label=u'Имя')
-    surname = forms.CharField(required=False, label=u'Отчество')
-    accepted_eula = forms.BooleanField(label=u'Я принимаю условия участия')
-
-
-class UserProfileForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        fields = ('surname', 'country', 'city', 'company', 'job', 'dokladchik', )
-        exclude = ('user', )
+        model = Stuff
 
+    def clean_username(self):
+        # Since User.username is unique, this check is redundant,
+        # but it sets a nicer error message than the ORM. See #13147.
+        username = self.cleaned_data["username"]
+        try:
+            Stuff._default_manager.get(username=username)
+        except Stuff.DoesNotExist:
+            return username
+        raise forms.ValidationError(self.error_messages['duplicate_username'])
 
-class UserForm(forms.ModelForm):
+# Допиливаем форму редактирования пользователя. В Meta.model указываем нашу модель.
+class AdminUserChangeForm(UserChangeForm):
     class Meta:
-        model = User
-        fields = ('last_name', 'first_name')
+        model = Stuff
+
+# Делаем то же самое для студента
+
+class AdminStudentAddForm(UserCreationForm):
+    class Meta:
+        model = Student
+    def clean_username(self):
+        # Since User.username is unique, this check is redundant,
+        # but it sets a nicer error message than the ORM. See #13147.
+        username = self.cleaned_data["username"]
+        try:
+            Student._default_manager.get(username=username)
+        except Student.DoesNotExist:
+            return username
+        raise forms.ValidationError(self.error_messages['duplicate_username'])
+
+class AdminStudentChangeForm(UserChangeForm):
+    class Meta:
+        model = Student
+
+
+
