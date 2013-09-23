@@ -6,6 +6,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+from django.views.generic import DetailView, ListView
+from polls.models import Poll
 
 urlpatterns = patterns('',
     # Examples:
@@ -17,12 +19,14 @@ urlpatterns = patterns('',
     #url(r'^test/', 'testForms.views.contact'),
     url(r'^accounts/', include('accounts.urls')),
     # Подключаем урлы приложения конференция
-    url(r'^accounts/', include('conference.urls')),
-    url(r'^', include('conference.urls')),
+    #url(r'^accounts/', include('conference.urls')),
+    #url(r'^', include('conference.urls')),
     url(r'^', include('accounts.urls')),
+    url(r'^', include('polls.urls')),
+    url(r'^', include('lessons.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.urls')),
-    url(r'^$', 'BaseProject.views.home'),  # Основная страница с информацией
+    #url(r'^$', 'BaseProject.views.home'),  # Основная страница с информацией
     url(r'^news/$', 'BaseProject.views.news'),  # Новости
     url(r'^contact/$', 'BaseProject.views.contacts'),  # Контакты
     url(r'^schedule/$', 'BaseProject.views.schedule'),

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Авторизация</title>
+    <script type="text/javascript">
+        // Insert optional override object before the function
+
+//        createGridder = function() {
+//            document.body.appendChild(
+//                            document.createElement('script'))
+//                    .src='js/960.gridder.js';
+//        }
+    </script>
+
+    <link rel="stylesheet" type="text/css" href=" css/reset.css" />
+    <link rel="stylesheet" type="text/css" href=" css/960_12_col.css" />
+    <link rel="stylesheet" type="text/css" href=" css/style.css" />
+</head>
+<body onload="createGridder()">
+    <div class="container_12">
+        <nav></nav>
+        <section>
+            <div class="grid_12"><h1>Авторизация</h1></div>
+            <div class="clear"></div>
+
+
+                <form action="#">
+
+                    <div class="form_body">
+                        <div class="grid_6 prefix_3 field">
+                            <label for="login">Логин:</label>
+                            <input type="text" class="input_text" id="login">
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <div class="grid_6 prefix_3 field">
+                        <label for="password">Пароль:</label>
+                        <input type="password" class="input_text" id="password">
+                    </div>
+
+                        <div class="clear"></div>
+
+                        <div class="grid_6 prefix_3 field">
+                            <button type="submit" class="btn blue">Войти</button>
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+                </form>
+
+                <div class="grid_6 prefix_6">
+                   <span class="alert">Ошибка авторизации</span>
+                </div>
+
+                <div class="clear"></div>
+
+        </section>
+    </div>
+</body>
+</html>

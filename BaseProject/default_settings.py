@@ -4,7 +4,8 @@ import os
 from django.conf import global_settings
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+#AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+AUTH_USER_MODEL = 'accounts.Stuff'
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -63,6 +64,7 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(os.path.dirname(__file__), '../info/').replace('\\', '/'),
     os.path.join(os.path.dirname(__file__), '../../bootstrap/docs/').replace('\\', '/'),
+    os.path.join(os.path.dirname(__file__), '../templates/vote/').replace('\\', '/'),
 )
 
 # List of finder classes that know how to find static files in
@@ -81,7 +83,7 @@ TEMPLATE_LOADERS = (
 )
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     # Добавляем контекст процессор для генерации меню
-    'conference.context_processors.sections_list',
+    #'conference.context_processors.sections_list',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -121,10 +123,12 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     #'testForms',
-    #'accounts',
+    'accounts',
     #'registration',
     #'conference',
     'department',
+    'polls',
+    'lessons',
 )
 
 # A sample logging configuration. The only tangible logging
