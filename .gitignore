@@ -2,6 +2,7 @@
 /BaseProject/settings.py
 /UserProfile
 static/*
+.ropeproject/
 !static
 *.pyc
 *.db
