@@ -1,6 +1,6 @@
 # -*- coding=utf8 -*-
 from django.conf.urls.defaults import patterns, url
-from registration.views import RegistrationView
+#from registration.views import RegistrationView
 #from forms import UserRegistrationForm
 #from views import profile, userlist, userbage
 
