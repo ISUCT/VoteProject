@@ -1,6 +1,6 @@
 # -*- coding=utf8 -*-
 #from django.conf.urls import patterns, include, url
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # Uncomment the next two lines to enable the admin:
@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'^', include('accounts.urls')),
     url(r'^', include('polls.urls')),
     url(r'^', include('lessons.urls')),
+    url(r'^', include('department.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.urls')),
     #url(r'^$', 'BaseProject.views.home'),  # Основная страница с информацией
