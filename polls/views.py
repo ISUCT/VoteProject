@@ -7,14 +7,15 @@ from django.core.urlresolvers import reverse
 
 
 def test(request):
-    print(dir(request.POST))    
+    print((request))
     test3=""
     if request.method=='POST':
-        inp = request.POST.get("inp","emptyyy")
-        print(inp)			
-        test3 = inp
-    print "test"
-    text = "hello"#"""<html><body><h1>Hello world</h1><p>asdfgvbasdbg</p></body></html>"""
+        Ael = request.POST.get("A","emptyyy")
+        Bel = request.POST.get("B","emptyyy")
+        print(Ael,Bel)
+        test3 =float(Ael) + float(Bel)
+    print "test right now"
+    text = "hello django"
     text2 = "hello again"
     return render(request,'polls/test.html', {'some': text,'some_2':text2,'result':test3})
 
