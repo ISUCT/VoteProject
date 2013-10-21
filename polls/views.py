@@ -21,10 +21,11 @@ def test(request):
 
 
 def index(request):
-    print "index"
     latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
+    output = ', '.join([p.question for p in latest_poll_list])
     context = {'latest_poll_list': latest_poll_list}
     return render(request, 'polls/index.html', context)
+    #return HttpResponse(output)
 
 def results(request, poll_id):
     print "result"
@@ -53,5 +54,5 @@ def vote(request, poll_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('poll_results', kwargs={'object_id': p.id}))
+        #return HttpResponseRedirect(reverse('polls/results', kwargs={'object_id': p.id}))
         return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
