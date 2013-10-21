@@ -11,15 +11,17 @@ def addLesson(request):
     if user.is_authenticated():
         lessonForm = LessonForm(request.POST)
         if request.method == 'POST':
+            print(lessonForm)
             lesson = Lesson()
             if lessonForm.is_valid():
+                print(lessonForm)
                 lesson.group = lessonForm.cleaned_data['group']
                 lesson.discipline = lessonForm.cleaned_data['discipline']
                 lesson.dateAndTtime = lessonForm.cleaned_data['dateAndTtime']
                 lesson.room = lessonForm.cleaned_data['room']
                 lesson.lessonID = lessonForm.cleaned_data['lessonID']
                 lesson.status = lessonForm.cleaned_data['status']
-                lesson.user = lessonForm.cleaned_data['user'] 
+                lesson.user = lessonForm.cleaned_data['user']
                 lesson.save()
                 return HttpResponseRedirect('/admin')
         return render_to_response('dokladedit.html', { 'form': lessonForm}, context_instance=RequestContext(request))
