@@ -7,7 +7,12 @@ from django.core.urlresolvers import reverse
 
 
 def test(request):
-    print((request))
+    #print((request))
+    print(request.GET)
+    #a=int(request.GET['a'])
+    #b=int(request.GET['b'])
+    #print("summ",a+b)
+
     test3=""
     if request.method=='POST':
         Ael = request.POST.get("A","emptyyy")
