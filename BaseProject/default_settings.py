@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'department',
     'polls',
     'lessons',
+    'datetimewidget',
 )
 
 # A sample logging configuration. The only tangible logging

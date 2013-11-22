@@ -24,7 +24,7 @@ def addLesson(request):
                 lesson.user = lessonForm.cleaned_data['user']
                 lesson.save()
                 return HttpResponseRedirect('/admin')
-        return render_to_response('dokladedit.html', { 'form': lessonForm}, context_instance=RequestContext(request))
+        return render_to_response('dokladedit.html', {'form': lessonForm}, context_instance=RequestContext(request))
     #text = """<html><body><h1>Hello world</h1><p>asdfgvbasdbg</p></body></html>"""
     #text2 = "hello again"
     #return HttpResponse(text)
