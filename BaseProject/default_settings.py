@@ -2,6 +2,7 @@
 # Django settings for BaseProject project.
 import os
 from django.conf import global_settings
+
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 #AUTH_PROFILE_MODULE = 'accounts.UserProfile'
