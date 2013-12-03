@@ -13,6 +13,11 @@ class Poll(models.Model):
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
+    class Meta(object):
+        verbose_name_plural = "Опрос"
+        verbose_name = "опроса"
+
+# Как переименовать поле Question?
 
 class Choice(models.Model):
     poll = models.ForeignKey(Poll)
@@ -20,4 +25,7 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __unicode__(self):
         return self.choice_text
+    class Meta(object):
+        verbose_name_plural = "Варианты ответа"
+        verbose_name = "вариант"
 
