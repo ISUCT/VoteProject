@@ -13,5 +13,5 @@ import settings
 
 
 def home(request):
-    text = "hello world"
+    text = "Вас приветствует сайт системы голосования"
     return render_to_response('test.html', {'content': text}, RequestContext(request))

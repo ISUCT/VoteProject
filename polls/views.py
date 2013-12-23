@@ -6,23 +6,23 @@ from django.template.context import RequestContext
 from django.core.urlresolvers import reverse
 
 
-def test(request):
-    #print((request))
-    print(request.GET)
-    #a=int(request.GET['a'])
-    #b=int(request.GET['b'])
-    #print("summ",a+b)
+#def test(request):
+    ##print((request))
+    #print(request.GET)
+    ##a=int(request.GET['a'])
+    ##b=int(request.GET['b'])
+    ##print("summ",a+b)
 
-    test3=""
-    if request.method=='POST':
-        Ael = request.POST.get("A","emptyyy")
-        Bel = request.POST.get("B","emptyyy")
-        print(Ael,Bel)
-        test3 =float(Ael) + float(Bel)
-    print "test right now"
-    text = "hello django"
-    text2 = "hello again"
-    return render(request,'polls/test.html', {'some': text,'some_2':text2,'result':test3})
+    #test3=""
+    #if request.method=='POST':
+        #Ael = request.POST.get("A","emptyyy")
+        #Bel = request.POST.get("B","emptyyy")
+        #print(Ael,Bel)
+        #test3 =float(Ael) + float(Bel)
+    #print "test right now"
+    #text = "hello django"
+    #text2 = "hello again"
+    #return render(request,'polls/test.html', {'some': text,'some_2':text2,'result':test3})
 
 
 def index(request):

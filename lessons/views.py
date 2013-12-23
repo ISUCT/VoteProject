@@ -5,30 +5,28 @@ from django.template.context import RequestContext
 from django.core.urlresolvers import reverse
 from lessons.forms import LessonForm
 from models import Lesson
+from datetime import datetime
 
 def addLesson(request):
     user = request.user
     if user.is_authenticated():
         lessonForm = LessonForm(request.POST)
         if request.method == 'POST':
-            print(lessonForm)
+            #print(lessonForm)
             lesson = Lesson()
             if lessonForm.is_valid():
-                print(lessonForm)
+                #print(lessonForm)
                 lesson.group = lessonForm.cleaned_data['group']
                 lesson.discipline = lessonForm.cleaned_data['discipline']
                 lesson.dateAndTtime = lessonForm.cleaned_data['dateAndTtime']
                 lesson.room = lessonForm.cleaned_data['room']
-                lesson.lessonID = lessonForm.cleaned_data['lessonID']
+                lesson.lessonID = datetime.now() #lessonForm.cleaned_data['lessonID']
                 lesson.status = lessonForm.cleaned_data['status']
-                lesson.user = lessonForm.cleaned_data['user']
+                lesson.user = user
                 lesson.save()
-                return HttpResponseRedirect('/admin')
+                return HttpResponseRedirect('/index')
         return render_to_response('dokladedit.html', {'form': lessonForm}, context_instance=RequestContext(request))
-    #text = """<html><body><h1>Hello world</h1><p>asdfgvbasdbg</p></body></html>"""
-    #text2 = "hello again"
-    #return HttpResponse(text)
-    return render(request,'vote/create.html', {})
+    return HttpResponseRedirect('/accounts/login')
 
 
 

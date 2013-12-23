@@ -45,4 +45,6 @@ class AdminStudentChangeForm(UserChangeForm):
         model = Student
 
 
-
+#class LoginForm(forms.ModelForm):
+    #uName = forms.CharField()
+    #uPass = forms.PasswordInput()
